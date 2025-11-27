@@ -1,5 +1,5 @@
 import React from "react";
-import "./Goals.css";
+import "./goals.css";
 import { Flame, Droplets, Moon, Brain, Target } from "lucide-react";
 
 const Goals = () => {
