@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Card, Col, Row } from "react-bootstrap";
 import WellnessLogModal from './WellnessLogModal';
-import HealthDashboard from './HealthDashboard.JSX';
 import Footerpart from './footerpart';
 import { mycontext } from '../../App';
+import HealthDashboard from './HealthDashboard';
 
 function Sleep() {
     const context = useContext(mycontext)
