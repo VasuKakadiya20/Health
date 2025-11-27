@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaUser, FaLock, FaHeartbeat, FaEdit } from "react-icons/fa";
-import "./Profile.css";
 import ProfileHeader from "../../components/profileheader/ProfileHeader";
 import ChangePassword from "../../components/ChangePassword/ChangePassword";
 import Health from "../../components/health/health";
+import "./profile.css"
 
 export default function MyProfile() {
   const [activeTab, setActiveTab] = useState("personal");
