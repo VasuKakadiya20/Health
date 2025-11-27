@@ -119,7 +119,6 @@ function Workoutpage() {
         }
         return acc;
     }, []);
-    console.log("chart Data:-",chartData)
 
     const deleteWorkout = (id) => {
         console.log(id)
