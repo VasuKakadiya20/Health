@@ -1,0 +1,123 @@
+.Dashbord-container{
+  margin-left: 250px;
+  transition: all 0.3s ease;
+}
+.dashboard {
+  padding: 25px 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  /* margin-left: 250px !important; */
+}
+
+.dashboard h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2D3748;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.dashboard p {
+  font-size: 1.2rem;
+  color: #4A5568;
+  margin-top: 8px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.dashboard img {
+  animation: wave 1.8s infinite ease-in-out;
+  transform-origin: 70% 70%;
+  width: 38px;
+  height: 38px;
+}
+
+/* 👋 waving animation */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+
+/* 🌍 Responsive Design */
+@media (max-width: 992px) {
+  .dashboard {
+    padding: 30px 20px;
+  }
+
+  .dashboard h1 {
+    font-size: 1.9rem;
+  }
+
+  .dashboard p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    border-radius: 16px;
+    padding: 25px 18px;
+  }
+
+  .dashboard h1 {
+    font-size: 1.6rem;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dashboard img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboard p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    border-radius: 14px;
+    padding: 20px 15px;
+  }
+
+  .dashboard h1 {
+    font-size: 1.4rem;
+  }
+
+  .dashboard p {
+    font-size: 0.95rem;
+  }
+
+  .dashboard img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slideDown {
+  animation: slideDown 0.6s ease forwards;
+}
+
+.slideUp {
+  animation: slideUp 0.6s ease forwards;
+}

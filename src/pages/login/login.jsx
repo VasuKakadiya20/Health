@@ -1,0 +1,171 @@
+import "./login.css";
+import { mycontext } from "../../App";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import { useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import React, { useState, useEffect, useContext } from "react";
+
+const LoginSignupForm = () => {
+  const context = useContext(mycontext);
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(true);
+  const [form, setForm] = useState({
+    name: "",
+    Email: "",
+    password: "",
+    cpassword: "",
+  });
+  const [snack, setSnack] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  });
+
+  useEffect(() => {
+    context.setIsHideSidebarAndHeader(true);
+  }, []);
+
+  const handleSnackClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setSnack({ ...snack, open: false });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async () => {
+    console.log("login")
+  };
+
+  const login = () => {
+    navigate("/")
+  }
+
+  return (
+    <>
+      <div className="auth-page">
+        <div className="auth-box">
+          <div className="auth-toggle">
+            <div
+              className="auth-btn-slider"
+              style={{ left: isLogin ? "0px" : "50%" }}
+            />
+            <button
+              type="button"
+              className={`auth-toggle-btn ${isLogin ? "active" : ""}`}
+              onClick={() => setIsLogin(true)}
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className={`auth-toggle-btn ${!isLogin ? "active" : ""}`}
+              onClick={() => setIsLogin(false)}
+            >
+              Signup
+            </button>
+          </div>
+
+          <h2 className="auth-title">
+            {isLogin ? "Login Form" : "Signup Form"}
+          </h2>
+
+          <form className="auth-form" onSubmit={handleSubmit}>
+            {!isLogin && (
+              <TextField
+                name="name"
+                label="Username"
+                variant="outlined"
+                fullWidth
+                className="auth-input"
+                value={form.name}
+                onChange={handleChange}
+              />
+            )}
+
+            <TextField
+              name="Email"
+              label="Email"
+              type="email"
+              variant="outlined"
+              fullWidth
+              className="auth-input"
+              value={form.Email}
+              onChange={handleChange}
+            />
+
+            <TextField
+              name="password"
+              label="Password"
+              type="password"
+              variant="outlined"
+              fullWidth
+              className="auth-input"
+              value={form.password}
+              onChange={handleChange}
+            />
+            
+            {!isLogin && (
+              <TextField
+                name="cpassword"
+                label="Confirm Password"
+                type="password"
+                variant="outlined"
+                fullWidth
+                required
+                className="auth-input mb-3"
+                value={form.cpassword}
+                onChange={handleChange}
+              />
+            )}
+
+            {isLogin && (
+              <div className="auth-link mt-3">
+                <a href="#">Forgot password?</a>
+              </div>
+            )}
+
+            <button type="submit" className="btn-save auth-submit" onClick={login}>
+              {isLogin ? "Login" : "Signup"}
+            </button>
+
+            <div className="auth-bottom-text">
+              {isLogin ? (
+                <>
+                  Not a member?{" "}
+                  <a onClick={() => setIsLogin(false)}>Signup now</a>
+                </>
+              ) : (
+                <>
+                  Already a member?{" "}
+                  <a onClick={() => setIsLogin(true)}>Login here</a>
+                </>
+              )}
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <Snackbar
+        open={snack.open}
+        autoHideDuration={2000}
+        onClose={handleSnackClose}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert
+          onClose={handleSnackClose}
+          severity={snack.severity}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {snack.message}
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+
+export default LoginSignupForm;

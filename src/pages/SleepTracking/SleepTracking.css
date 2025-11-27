@@ -1,0 +1,229 @@
+.sleep{
+    margin-left: 250px !important;
+}
+.Sleep-page {
+  /* background: #f8f9fa; */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.Sleep-page .addmeal {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+  padding: 10px 18px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: width 0.3s ease-in-out;
+}
+
+.Sleep-page .addmeal .text {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateX(20px);
+  transition: all 0.4s ease;
+}
+
+.Sleep-page .addmeal:hover .text {
+  max-width: 200px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Sleep-page .addmeal .icon {
+  transition: transform 0.4s ease;
+}
+
+.Sleep-page .addmeal:hover .icon {
+  transform: translateX(-3px);
+}
+/* css */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.mood-btn {
+  border: 2px solid #dcdcdc;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+width: 146px !important;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.mood-active {
+  border-color: #7b3de4 !important;
+  background: #f1e8ff;
+  transform: scale(1.06);
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+/* Modal Container */
+.modal-container {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+/* Simple animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.mood-active {
+  border-color: #7b3de4 !important;
+  background: #f1e8ff;
+  transform: scale(1.05);
+}
+
+.modal-body-content label{
+  font-weight: 500;
+}
+.modal-body-content .text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.stress{
+  width: 50%;
+}
+.stress svg{
+  color: #6C63FF;
+}
+
+.stress .span{
+  margin-left: 2% !important;
+  font-weight: 500;
+}
+
+.stress .spanvalue{
+  margin-left: 68% !important;
+ background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
+ padding: 1%;
+ border-radius: 25%;
+ font-size: 12px !important;
+}
+
+.stress .ProgressBar{
+  width: 98% !important;
+  height: 10px !important ;
+}
+
+/* css */
+.sideconteiner{
+  width: 50% !important;
+}
+
+.sideconteiner svg{
+  color: #6C63FF;
+}
+
+.streak-card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+}
+
+.sleep-bg {
+  background: #eefdf0;
+  border-color: #c4eac6;
+}
+
+.med-bg {
+  background: #fbf1ff;
+  border-color: #e5c6ff;
+}
+
+.stress-bg {
+  background: #eef4ff;
+  border-color: #c6d9ff;
+}
+
+.emoji {
+  font-size: 40px;
+  margin-right: 15px;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.desc {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.days-badge {
+  padding: 4px 14px;
+  font-size: 13px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 500;
+}
+
+.badge-green {
+  background: #2ecc71;
+}
+
+.badge-purple {
+  background: #a55bff;
+}
+
+.badge-blue {
+  background: #3c8bff;
+}
+
+
+.mood-active {
+  border-color: #7b3de4 !important;
+  background: #f1e8ff;
+  transform: scale(1.05);
+}

@@ -1,0 +1,90 @@
+/* .health-metrics-container {
+  margin-left: 250px;
+  transition: all 0.3s ease;
+} */
+
+@media (max-width: 991px) {
+  .health-metrics-container {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+.health-metrics-container h4 {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.rgap{
+  margin-right: 20px !important;
+}
+
+.card {
+  border-radius: 14px;
+  transition: all 0.25s ease-in-out;
+  padding: 0.8rem !important; 
+  min-height: 100px !important; 
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.card p.small {
+  font-size: 0.8rem !important;
+}
+.card .fs-4 {
+  font-size: 1.1rem !important;
+}
+
+.bg-sky-subtle {
+  background: linear-gradient(135deg, #f7fbff 0%, #c2daf0 100%) !important;
+}
+
+.bg-peach-subtle {
+  background: linear-gradient(135deg, #fcf6f2 0%, #fce9d7 100%) !important;
+}
+
+.bg-gray-subtle {
+  background: linear-gradient(135deg, #F2F3F5 0%, #d1e7fd 100%) !important;
+}
+
+.bg-lavender-subtle {
+  background: linear-gradient(135deg, #f4effa 0%, #e9d7fc 100%) !important;
+}
+
+.bg-coral-subtle {
+  background: linear-gradient(135deg, #FFF2F2 0%, #facece 100%) !important;
+}
+
+.bg-mint-subtle {
+  background: linear-gradient(135deg,  #F8FFF9 0%,  #c0f0d5 100%) !important;
+}
+
+
+
+
+
+.bg-aqua-subtle {
+  background: linear-gradient(135deg, #f1fcfd 0%,  #c8eff8 100%) !important;
+}
+
+.text-sky { color: #2196F3 !important; }
+.text-mint { color: #00C896 !important; }
+.text-peach { color: #FF9800 !important; }
+.text-coral { color: #F44336 !important; }
+.text-lavender { color: #8E24AA !important; }
+.text-aqua { color: #00BCD4 !important; }
+.text-gray { color: #607D8B !important; }
+
+
+.row.g-4 {
+  row-gap: 0.8rem !important;
+}

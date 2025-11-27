@@ -1,0 +1,64 @@
+.today-mood-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mood-badge {
+  background: rgb(37 99 235);
+  padding: 6px 18px;
+  font-size: 14px;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.pie-container {
+  width: 260px;
+  margin: auto;
+}
+
+.last7-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.sleep-box {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+/* 
+.bg-light-blue {
+  background: #eef6ff;
+} */
+
+.bg-light-purple {
+  background: rgb(232, 238, 252);
+}
+
+.purple-text {
+  color: rgb(37,99,235);
+  font-weight: 600;
+}
+
+.blue-text {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.sleep-box h4 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.sleep-box p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.card-title svg{
+color: rgb(255, 96, 96);
+height: 25px !important;
+}
