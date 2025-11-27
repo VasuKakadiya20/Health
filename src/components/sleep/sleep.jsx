@@ -77,7 +77,6 @@ function Sleep() {
             return wellnessdate >= last7day && wellnessdate <= todayDate;
         });
         context.setsleepchart(fillterdata)
-        // console.log("chart",fillterdata)
         localStorage.setItem("sevendaysleepchart", JSON.stringify(fillterdata))
     },[])
 
@@ -86,8 +85,6 @@ function Sleep() {
 });
 
 console.log("Sleep Data:", filltersleepdata);
-
-
     return (
         <>
             <div className="slideDown container py-4 Sleep-page">
@@ -132,10 +129,6 @@ console.log("Sleep Data:", filltersleepdata);
                                         <span className="macro-box carbs">Sleep Quality :- {Wellness.sleep_quality}</span>
                                         {/* <span className="macro-box fats">{Wellness.meditation}</span> */}
                                     </div>
-
-                                    {/* <div className="mt-2 small ">
-                                       Yoga time :-<span>{Wellness.yoga}</span>
-                                    </div> */}
 
                                     <div className='mt-2 text-primary small'>
                                         <span>Notes :- {Wellness.notes}</span>

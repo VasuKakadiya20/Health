@@ -1,26 +1,3 @@
-// import React from 'react'
-// import { Button} from "react-bootstrap";
-
-// function Workoutpage() {
-//   return (
-//      <div className="slideDown container py-4 Workout-page">
-//                 <div className="slideDown d-flex justify-content-between align-items-center">
-//                      <h1 className="fw-bold">Workout History</h1> {/* style={{color:"#6C63FF"}} */}
-//                       <Button className="addWorkout">
-//                         <span className="icon">+</span>
-//                         <span className="text">Log Your Workout</span>
-//                     </Button>
-//                     </div>
-//                     <div className=''>
-
-//                     </div>
-//     </div>
-//   )
-// }
-
-// export default Workoutpage
-
-
 import React, { useState } from "react";
 import { Button, Card, Row, Col, Table } from "react-bootstrap";
 import { FaCalendarCheck, FaChartLine, FaFire } from "react-icons/fa";
