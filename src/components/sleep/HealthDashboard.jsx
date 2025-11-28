@@ -54,36 +54,59 @@ export default function HealthDashboard({ value = [] }) {
             <p className="text-center last7-text">Last 7 Days Mood Distribution</p>
           </div>
         </div>
-    {
-      sleepdata.map((item)=>{
-         return(
-        <div className="col-md-6">
-          <div className="card sleep-card shadow-sm">
-            <h6 className="card-title mb-3">
-              <span className="me-2">🌙</span>Sleep Tracker
-            </h6>
+  {sleepdata.length > 0 ? (
+  sleepdata.map((item) => (
+    <div className="col-md-6" key={item._id}>
+      <div className="card sleep-card shadow-sm">
+        <h6 className="card-title mb-3">
+          <span className="me-2">🌙</span> Sleep Tracker
+        </h6>
 
-         <div className="d-flex gap-3 mb-4">
-              <div className="sleep-box bg-light-blue">
-                <h4>{item.sleep_duration}h</h4>
-                <p>Last Night</p>
-              </div>
+        <div className="d-flex gap-3 mb-4">
+          <div className="sleep-box bg-light-blue">
+            <h4>{item.SleepDuration || 0}h</h4>
+            <p>Last Night</p>
+          </div>
 
-              <div className="sleep-box bg-light-purple">
-                <h4 className="purple-text">{item.sleep_quality}</h4>
-                <p>Quality</p>
-              </div>
+          <div className="sleep-box bg-light-purple">
+            <h4 className="purple-text">{item.SleepQuality || "N/A"}</h4>
+            <p>Quality</p>
+          </div>
 
-              <div className="sleep-box bg-light-blue">
-                <h4 className="blue-text">1m</h4>
-                <p>Deep Sleep</p>
-              </div>
-            </div>
+          <div className="sleep-box bg-light-blue">
+            <h4 className="blue-text">{item.DeepSleep || "0m"}</h4>
+            <p>Deep Sleep</p>
           </div>
         </div>
-        )
-      }
-             )} 
+      </div>
+    </div>
+  ))
+) : (
+  <div className="col-md-6">
+    <div className="card sleep-card shadow-sm">
+      <h6 className="card-title mb-3">
+        <span className="me-2">🌙</span> Sleep Tracker
+      </h6>
+
+      <div className="d-flex gap-3 mb-4">
+        <div className="sleep-box bg-light-blue">
+          <h4>h</h4>
+          <p>Last Night</p>
+        </div>
+
+        <div className="sleep-box bg-light-purple">
+          <h4 className="purple-text">N/A</h4>
+          <p>Quality</p>
+        </div>
+
+        <div className="sleep-box bg-light-blue">
+          <h4 className="blue-text">0m</h4>
+          <p>Deep Sleep</p>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
       </div>
     </div>
     </>

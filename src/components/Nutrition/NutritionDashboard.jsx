@@ -187,9 +187,9 @@ useEffect(() => {
           </Button>
 
         </div>
-        <p className="slideDown mb-4">Track your meals, calories, and macronutrients</p>
+        {/* <p className="slideDown mb-4">Track your meals, calories, and macronutrients</p> */}
 
-        <Row className="slideDown mb-4 summary-cards">
+        <Row className="slideDown mb-4 summary-cards mt-3">
           <h5 className="text-white">Today's Nutrition</h5>
           <Col md={2}>
             <Card className="text-center p-3">

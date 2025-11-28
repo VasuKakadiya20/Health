@@ -96,7 +96,7 @@ console.log("Sleep Data:", filltersleepdata);
                         <span className="text">Log Your Wellness</span>
                     </Button>
                 </div>
-                <p className="slideDown mb-4">Track your mental health, sleep, stress</p>
+                {/* <p className="slideDown mb-4">Track your mental health, sleep, stress</p> */}
 
                 <WellnessLogModal
                     show={showModal}

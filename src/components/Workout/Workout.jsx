@@ -112,7 +112,7 @@ function Workoutpage() {
       <>
         <div className="slideDown container py-4 Workout-page">
             <div className="slideDown d-flex justify-content-between align-items-center mb-4">
-                <h1 className="fw-bold">Workout History</h1>
+                <h1 className="fw-bold">My Workout</h1>
                 <Button className="addWorkout" onClick={() => setShowModal(true)}>
                     <span className="icon">+</span>
                     <span className="text">Log Your Workout</span>

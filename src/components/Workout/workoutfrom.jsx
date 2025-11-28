@@ -83,7 +83,7 @@ function WorkoutLogModal({ show, onHide, onSave }) {
           <Col md={6} className="mb-3">
             <Form.Label>Duration (minutes)</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               placeholder="e.g. 30"
               value={formData.duration}
               onChange={(e) => handleChange("duration", e.target.value)}

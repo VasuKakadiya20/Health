@@ -2,18 +2,31 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaEdit } from "react-icons/fa";
 import { Target } from "lucide-react";
+import { useEffect } from "react";
+import { fetchDataFromApi, postData } from "../../api/Api";
 
 export default function FitnessGoals() {
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    steps: 2500,
-    calories: 2000,
-    workout: 2,
-    duration: 30,
-    water: 2000,
-    weight: 65,
-    sleep: 7,
-  });
+const [formData, setFormData] = useState({
+  Steps: "",
+  Calories: "",
+  Workout: "",
+  WDuration: "",
+  Water: "",
+  Weight: "",
+  Sleep: "",
+});
+
+  const username = "vk"
+
+  useEffect(()=>{
+    fetchDataFromApi(`/Goals/${username}`).then((res)=>{
+      console.log("goal data:-",res)
+      if (res.length > 0) {
+        setFormData(res[0]); 
+      }
+    })
+  },[])
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,11 +39,32 @@ export default function FitnessGoals() {
     setIsEditing(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const bodyData = { ...formData, username };
+
+    const response = await postData(`/Goals/create`, bodyData);
+    console.log("Update Response:", response);
+    if (response?.status) {
+      alert(response.message || "Goals saved successfully!");
+    } else {
+      alert("Something went wrong!");
+    }
     setIsEditing(false);
-    alert("✅ Goals updated successfully!");
-  };
+    fetchDataFromApi(`/Goals/${username}`).then((res)=>{
+      console.log("goal data:-",res)
+      if (res.length > 0) {
+        setFormData(res[0]); 
+      }
+    })
+  } catch (err) {
+    console.error("Error updating goals:", err);
+    alert("Failed to update goals!");
+  }
+};
+
 
   return (
   <>
@@ -64,8 +98,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Enter daily steps"
-              name="steps"
-              value={formData.steps}
+              name="Steps"
+              value={formData.Steps}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -80,8 +114,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Enter daily calories"
-              name="calories"
-              value={formData.calories}
+              name="Calories"
+              value={formData.Calories}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -96,8 +130,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Workouts / week"
-              name="workout"
-              value={formData.workout}
+              name="Workout"
+              value={formData.Workout}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -112,8 +146,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Minutes per workout"
-              name="duration"
-              value={formData.duration}
+              name="WDuration"
+              value={formData.WDuration}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -128,8 +162,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="ml per day"
-              name="water"
-              value={formData.water}
+              name="Water"
+              value={formData.Water}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -144,8 +178,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Target weight (kg)"
-              name="weight"
-              value={formData.weight}
+              name="Weight"
+              value={formData.Weight}
               onChange={handleChange}
               disabled={!isEditing}
             />
@@ -160,8 +194,8 @@ export default function FitnessGoals() {
               type="number"
               className="form-control mt-2"
               placeholder="Hours per night"
-              name="sleep"
-              value={formData.sleep}
+              name="Sleep"
+              value={formData.Sleep}
               onChange={handleChange}
               disabled={!isEditing}
             />
